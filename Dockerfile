@@ -20,7 +20,6 @@ RUN apt-get update && \
       php7.0-cli \
       libapache2-mod-php7.0 \
       php-apcu \
-      php-xdebug \
       php7.0-gd \
       php7.0-json \
       php7.0-ldap \
@@ -42,7 +41,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 4.4.7
+ENV NODE_VERSION 4
 
 # Install nvm with node and npm
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
