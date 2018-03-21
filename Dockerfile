@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM selenium/standalone-chrome
 MAINTAINER Alexander Schenkel <alex@alexi.ch>
 
 VOLUME ["/var/www"]
@@ -68,5 +68,5 @@ RUN npm install -g bower gulp grunt-cli grunt
 #RUN chmod +x /usr/local/bin/run
 #RUN a2enmod rewrite
 
-#EXPOSE 80
+EXPOSE 8080
 #CMD ["/usr/local/bin/run"]
