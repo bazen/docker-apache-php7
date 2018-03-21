@@ -1,4 +1,4 @@
-FROM selenium/standalone-chrome
+FROM ubuntu:16.04
 MAINTAINER Alexander Schenkel <alex@alexi.ch>
 
 VOLUME ["/var/www"]
@@ -41,7 +41,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 4
+ENV NODE_VERSION 8.10.0
 
 # Install nvm with node and npm
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
@@ -61,6 +61,7 @@ RUN node -v
 RUN npm -v
 
 RUN npm install -g bower gulp grunt-cli grunt
+
 
 
 #COPY apache_default /etc/apache2/sites-available/000-default.conf
