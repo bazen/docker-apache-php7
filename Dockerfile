@@ -14,6 +14,9 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       mysql-client \
       wget \
       unzip \
+      texlive-latex-base \
+      texlive-latex-extra \
+      lcdf-typetools \
       pdfjam \
       pdftk \
       imagemagick \
