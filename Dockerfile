@@ -51,7 +51,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
 
 ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION 8.10.0
+ENV NODE_VERSION 10.15.1
 
 # Install nvm with node and npm
 RUN wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
