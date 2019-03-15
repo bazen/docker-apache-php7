@@ -74,6 +74,11 @@ RUN npm -v
 RUN npm install -g bower gulp grunt-cli grunt
 
 
+# Update ImageMagick Policy
+ARG imagemagic_config=/etc/ImageMagick-6/policy.xml
+RUN if [[ -f $imagemagic_config ]] ; then sed -i 's/<policy domain="coder" rights="none" pattern="PDF" \/>/<policy domain="coder" rights="read|write" pattern="PDF" \/>/g' $imagemagic_config ; else echo did not see file $imagemagic_config ; fi
+
+
 #
 #RUN php -r "echo setlocale(LC_ALL, 0);"
 #RUN php -r "setlocale(LC_MONETARY, 'en_US.UTF-8');   setlocale(LC_ALL, 'en_US.UTF8'); echo money_format('%#10n',10.99);"
