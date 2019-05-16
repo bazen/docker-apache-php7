@@ -42,6 +42,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       php7.0-opcache \
       php7.0-bz2 \
       php7.0-xmlreader \
+      php-imagick \
       composer \
       build-essential libssl-dev \
           && printf 'en_GB.UTF-8 UTF-8\n' >> /etc/locale.gen \
