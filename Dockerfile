@@ -15,8 +15,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       wget \
       unzip \
       lcdf-typetools \
-      pdfjam \
-      pdftk \
+      qpdf \
       imagemagick \
       python-pip  \
       nodejs  \
