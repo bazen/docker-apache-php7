@@ -3,7 +3,10 @@ MAINTAINER Felix Krüger <code@f3l1x.com>
 
 VOLUME ["/var/www"]
 
-RUN apt-get clean && apt-get update && apt-get install -y locales
+ENV TERM linux
+ENV DEBIAN_FRONTEND noninteractive
+
+RUN apt-get clean && apt-get update && apt-get install -y dialog apt-utils locales
 RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
@@ -14,7 +17,6 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       mysql-client \
       wget \
       unzip \
-      lcdf-typetools \
       qpdf \
       imagemagick \
       python-pip  \
@@ -40,10 +42,9 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       php7.2-bz2 \
       php7.2-xmlreader \
       php-imagick \
-      composer \
-      build-essential libssl-dev \
-          && printf 'en_GB.UTF-8 UTF-8\n' >> /etc/locale.gen \
-          && locale-gen en_US.UTF-8
+      composer
+
+RUN printf 'en_GB.UTF-8 UTF-8\n' >> /etc/locale.gen && locale-gen en_US.UTF-8
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
