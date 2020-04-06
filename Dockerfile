@@ -1,5 +1,5 @@
-FROM ubuntu:16.04
-MAINTAINER Alexander Schenkel <alex@alexi.ch>
+FROM ubuntu:18.04
+MAINTAINER Felix Krüger <code@f3l1x.com>
 
 VOLUME ["/var/www"]
 
@@ -14,8 +14,6 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       mysql-client \
       wget \
       unzip \
-      texlive-latex-base \
-      texlive-latex-extra \
       lcdf-typetools \
       pdfjam \
       pdftk \
@@ -23,25 +21,25 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       python-pip  \
       nodejs  \
       apache2 \
-      php7.0 \
+      php7.2 \
       php-curl \
-      php7.0-cli \
-      libapache2-mod-php7.0 \
+      php7.2-cli \
+      libapache2-mod-php7.2 \
       php-apcu \
-      php7.0-gd \
-      php7.0-json \
-      php7.0-ldap \
-      php7.0-mbstring \
-      php7.0-mysql \
-      php7.0-pgsql \
-      php7.0-sqlite3 \
-      php7.0-xml \
-      php7.0-xsl \
-      php7.0-zip \
-      php7.0-soap \
-      php7.0-opcache \
-      php7.0-bz2 \
-      php7.0-xmlreader \
+      php7.2-gd \
+      php7.2-json \
+      php7.2-ldap \
+      php7.2-mbstring \
+      php7.2-mysql \
+      php7.2-pgsql \
+      php7.2-sqlite3 \
+      php7.2-xml \
+      php7.2-xsl \
+      php7.2-zip \
+      php7.2-soap \
+      php7.2-opcache \
+      php7.2-bz2 \
+      php7.2-xmlreader \
       php-imagick \
       composer \
       build-essential libssl-dev \
