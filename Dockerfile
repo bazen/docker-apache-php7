@@ -9,7 +9,7 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LC_MONETARY en_US.UTF-8
-
+RUN add-apt-repository ppa:ondrej/php
 RUN apt-get clean && apt-get update && apt-get install -y \
       mysql-client \
       wget \
@@ -23,30 +23,33 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       python-pip  \
       nodejs  \
       apache2 \
-      php7.0 \
-      php-curl \
-      php7.0-cli \
-      libapache2-mod-php7.0 \
-      php-apcu \
-      php7.0-gd \
-      php7.0-json \
-      php7.0-ldap \
-      php7.0-mbstring \
-      php7.0-mysql \
-      php7.0-pgsql \
-      php7.0-sqlite3 \
-      php7.0-xml \
-      php7.0-xsl \
-      php7.0-zip \
-      php7.0-soap \
-      php7.0-opcache \
-      php7.0-bz2 \
-      php7.0-xmlreader \
-      php-imagick \
+      php7.4 \
+      php7.4-curl \
+      php7.4-cli \
+      libapache2-mod-php7.4 \
+      php7.4-apcu \
+      php7.4-gd \
+      php7.4-json \
+      php7.4-ldap \
+      php7.4-mbstring \
+      php7.4-mysql \
+      php7.4-pgsql \
+      php7.4-sqlite3 \
+      php7.4-xml \
+      php7.4-xsl \
+      php7.4-zip \
+      php7.4-soap \
+      php7.4-opcache \
+      php7.4-bz2 \
+      php7.4-xmlreader \
+      php7.4-intl \
+      php7.4-imagick \
       composer \
-      build-essential libssl-dev \
-          && printf 'en_GB.UTF-8 UTF-8\n' >> /etc/locale.gen \
-          && locale-gen en_US.UTF-8
+      build-essential \
+      libssl-dev \
+      && printf 'en_GB.UTF-8 UTF-8\n' >> /etc/locale.gen \
+      && locale-gen en_US.UTF-8 \
+      && a2enmod php7.4
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
