@@ -41,6 +41,7 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       php7.2-opcache \
       php7.2-bz2 \
       php7.2-xmlreader \
+      php7.2-intl \
       php-imagick \
       composer
 
