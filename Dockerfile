@@ -3,14 +3,15 @@ MAINTAINER Alexander Schenkel <alex@alexi.ch>
 
 VOLUME ["/var/www"]
 
-RUN apt-get clean && apt-get update && apt-get install -y locales
+ENV DEBIAN_FRONTEND noninteractive
+RUN apt-get update && apt-get install -y software-properties-common locales
 RUN locale-gen en_US.UTF-8 && dpkg-reconfigure locales
 ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 ENV LC_MONETARY en_US.UTF-8
 RUN add-apt-repository ppa:ondrej/php -y
-RUN apt-get clean && apt-get update && apt-get install -y \
+RUN apt-get update && apt-get install -y \
       mysql-client \
       wget \
       unzip \
@@ -50,6 +51,8 @@ RUN apt-get clean && apt-get update && apt-get install -y \
       && printf 'en_GB.UTF-8 UTF-8\n' >> /etc/locale.gen \
       && locale-gen en_US.UTF-8 \
       && a2enmod php7.4
+
+RUN apt-get clean
 
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
