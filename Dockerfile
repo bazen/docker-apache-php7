@@ -13,6 +13,7 @@ ENV LC_MONETARY en_US.UTF-8
 RUN add-apt-repository ppa:ondrej/php -y
 RUN apt-get update && apt-get install -y \
       mysql-client \
+      git \
       wget \
       unzip \
       texlive-latex-base \
